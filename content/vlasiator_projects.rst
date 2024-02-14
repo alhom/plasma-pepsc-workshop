@@ -13,8 +13,8 @@ Intended learning outcomes
 The user has an overview of main types of projects included in Vlasiator and can configure them.
 
 
-"Project"
----------
+Project
+-------
 
 Let's look at some sections of a Vlasiator configuration file:
 
@@ -90,7 +90,7 @@ These describe the initial population parameters, for each ion population. Inflo
 
 These are a bit more interesting! ``densityModel`` defines the (spatial) density profile (and there are unlisted options, such as ``Square``) and `densityWidth` gives a scale width for the signal. ``Maxwellian`` is a bit confusingly a spatially-constant density, and then ``rhoBase`` sets a background density besides the density signal.
 
-Notably, these all are related to the initial conditions - system boundaries are defined by their own classes and configuration headers (like ``[proton_Maxwellian]``).
+Notably, these all are related to the initial conditions: we populate the initial plasma and the magnetic field values (or call other functions in e.g. `backgroundfield/`). System boundaries are defined by their own classes and configuration headers (like ``[proton_Maxwellian]`` for inflow boundaries).
 
 So what are Projects?
 ^^^^^^^^^^^^^^^^^^^^^
@@ -110,21 +110,156 @@ For example, the Flowthrough project source folder looks like this:
     sw1_amr_test_20190611_YPK.dat
     sw1.dat
 
-There are the project code definitions (``Flowthrough.h`` and ``Flowthrough.cpp``) and and example configuration (``Flowthrough.cfg``, with an associated ``sw1.dat``), and some historical tests preserved for posteriority.
+There are the project code definitions (``Flowthrough.h`` and ``Flowthrough.cpp``) and and example configuration (``Flowthrough.cfg``, with an associated ``sw1.dat``), and some historical tests preserved for posteriority. This is the basic layout of a project in the source files, and some folders even contain documentation and helper spreadsheets!
+
+A (non-exhaustive) list of projects
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Alfvén
+++++++
+
+A test case for circularly polarized Alfvén waves, based on MHD test cases. See the included documentation. Superseded by dispersion tests.
+
+Diffusion
++++++++++
+
+Two-dimensional plasma diffusion test.
+
+Dispersion
+++++++++++
+
+Dispersion test driven by a specific form of perturbations. Superseded by Fluctuations.
+
+Distributions
++++++++++++++
+
+Two Maxwellian populations of the same species with different velocity distribution parameters, with density and magnetic field perturbations.
+
+Firehose
+++++++++
+
+Firehose test with parametrized perturbations, incl. a parameter calculation sheet.
+
+Flowthrough
++++++++++++
+
+Plasma flowing in a tube, with either inflow driving or given density signals. Used e.g. in testing of the Ganse et al., 2023 AMR paper.
+
+Fluctuations
+++++++++++++
+
+General-purpose test, with random perturbations in density, velocity, or magnetic field and periodic boundaries. Useful for inspecting dispersion properties.
+
+Harris
+++++++
+
+1-D MHD Harris equilibrium profile. Has not stayed in equilibrium.
+
+IPShock
++++++++
+
+A shock study project.
+
+KHB
++++
+
+Kelvin-Helmholz instability template. Not necessarily in equilibrium in the initial condition (studies ongoing).
+
+.. Larmor
+.. ++++++
+
+
+Magnetosphere
++++++++++++++
+
+The global magnetosphere project. Includes inputs for the global dipole (several methods and parameters) and the initial populations (that help to stabilize the simulation during initialization).
+
+The example configuration is 2D, with the new ionosphere inner boundary, which is not supported in 2D. It also includes a helium population.
+
+MultiPeak
++++++++++
+
+A test with configurable number of Maxwellian populations with some spatial density distribution and perturbations.
+
+Riemann1
+++++++++
+
+Riemann problem/shock tube test case, based on MHD tests.
+
+Shock, Shocktest
+++++++++++++++++
+
+Various.
+
+Template
+++++++++
+
+Template for building your own project.
+
+test_fp
++++++++
+
+Field solver isotropy test.
+
+.. testHall
+.. ++++++++
+
+
+test_trans
+++++++++++
+
+Vlasov translation isotropy test.
+
+.. VelocityBox
+.. verificationLarmor
+
+
+These projects and their example configs can be used as templates for building larger studies. If you don't find a suitable project to work from, feel free to build your own! This requires a bit of coding, and the basics of that are explained in `this write-up <new_project>`_.
+
+Boundary conditions
+-------------------
+
+The other fairly important portion besides the initial conditions offered by the projects, these can be found under the `sysboundary <https://github.com/fmihpc/vlasiator/tree/master/sysboundary>`_ folder in the source code. See project and sample configuration files for examples.
+
+Copysphere
+++++++++++
+
+Formerly known as ``ConductingSphere``
+
+DoNotCompute
+++++++++++++
+
+Handles e.g. cells inside the inner boundary.
+
+Inflow
+++++++
+
+Inflow base class, forms the basis for ``Maxwellian``.
+
+Ionosphere
+++++++++++
+
+Contains the ionosphere solver and wraps the 
+
+Outflow
++++++++
+
+Maxwellian
++++++++++++++
 
 
 
 
-Other practical aspects
------------------------
+.. Other practical aspects
+.. -----------------------
 
 
 
 
-Interesting questions you might get
------------------------------------
+.. Interesting questions you might get
+.. -----------------------------------
 
 
 
-Typical pitfalls
-----------------
+.. Typical pitfalls
+.. ----------------
