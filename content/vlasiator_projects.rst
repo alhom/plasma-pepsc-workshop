@@ -5,7 +5,7 @@ Why we teach this lesson
 ------------------------
 
 Here we go through some available Vlasiator projects and how those are employed to set up different environments.
-
+main-loop
 
 Intended learning outcomes
 --------------------------
@@ -63,7 +63,7 @@ Here, we have specified ``project = Flowthrough``, and some input under ``[Flowt
     --Flowthrough.Bz arg (=0)  ... Magnetic field z component (T)
     
 
-That's pretty self-explanatory! notably, the ``arg (=0)`` shows the syntax and default value, and the unit ``(T)`` is given at the end. Similarly:
+That's pretty self-explanatory! Notably, the ``arg (=0)`` shows the syntax and default value, and the unit ``(T)`` is given at the end. Similarly:
 
 .. code-block::
 
