@@ -130,6 +130,8 @@ Dispersion
 
 Dispersion test driven by a specific form of perturbations. Superseded by Fluctuations.
 
+See the code for an example of utilizing a simulation loop hook for custom run-time code.
+
 Distributions
 +++++++++++++
 
@@ -221,31 +223,38 @@ Boundary conditions
 
 The other fairly important portion besides the initial conditions offered by the projects, these can be found under the `sysboundary <https://github.com/fmihpc/vlasiator/tree/master/sysboundary>`_ folder in the source code. See project and sample configuration files for examples.
 
-Copysphere
-++++++++++
+The boundary conditions handle both the Vlasov boundary conditions and the fieldsolver boundary conditions at the same time.
 
-Formerly known as ``ConductingSphere``
+Copysphere
+^^^^^^^^^^
+
+Formerly known as ``ConductingSphere``. Copies perturbed-B from nearest neighbours (or zeros it), zeros electric fields and holds initial plasma distributions constant.
+
+Supplanted by Ionosphere for 3D magnetospheric simulations.
 
 DoNotCompute
-++++++++++++
+^^^^^^^^^^^^
 
-Handles e.g. cells inside the inner boundary.
+Handles e.g. cells inside the inner boundary, and tells for the solvers to bypass these.
 
-Inflow
-++++++
+Inflow and Maxwellian
+^^^^^^^^^^^^^^^^^^^^^
 
-Inflow base class, forms the basis for ``Maxwellian``.
+Inflow is a base class that forms the basis for Maxwellian. Handles solar wind inflow, includin
 
 Ionosphere
-++++++++++
+^^^^^^^^^^
 
-Contains the ionosphere solver and wraps the 
+Contains the ionosphere solver and wraps everything related to it, including the coupling from the ionosphere to the Vlasov inner boundary.
+
+Potential mistakes include having the coupling radius too close/just at the inner boundary, leading to artefacts on the ionosphere (see /scratch/project_465000693/example_runs/Ionosphere3D and esp. the early phase outputs).
 
 Outflow
-+++++++
+^^^^^^^
 
-Maxwellian
-+++++++++++++
+Copy conditions and plasma outflow.
+
+
 
 
 
