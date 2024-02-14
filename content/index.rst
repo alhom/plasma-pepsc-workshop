@@ -75,8 +75,8 @@ thousands of cores to perform massively parallel computations.
    visit
    analysator
    analysator_exercises
-..
    vlasiator_projects
+..
    example_run
 
 .. toctree::

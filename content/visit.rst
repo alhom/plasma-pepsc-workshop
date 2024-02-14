@@ -42,6 +42,12 @@ If you haven't yet done so, please:
 
 Feel free to get to know the `VisIt manuals<https://visit-sphinx-github-user-manual.readthedocs.io/en/develop/getting_started/index.html>`_ as well!
 
+VisIt configuration
+-------------------
+
+ssh issues are probably caused by ssh keys not being set correctly. In the ``Host profiles`` settings, specify the path to your ssh key in the form ``ssh -i /path/to/key``. Especially passphrased keys may require the use of ``-nopty`` as a launch option to be able to enter the passphrase.
+
+From VisIt options/databases, when handling vlsv files, one should enable the box "Treat all databases as time-varying". Otherwise the plots will likely appear garbled at some point.
 
 The hands-on
 ------------

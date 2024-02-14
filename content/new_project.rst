@@ -1,10 +1,6 @@
 New project from template
 =========================
 
-Timing
-------
-
-Thursday, maybe.
 
 Setting up a new project
 ------------------------

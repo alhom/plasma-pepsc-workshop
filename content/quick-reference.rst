@@ -1,11 +1,11 @@
 Quick Reference
 ===============
 
-Reference cards sorted by topic.
+Reference cards sorted by topic. This is still a bit empty!
 
 
-Adaptive Mesh Refinement cfg
-----------------------------
+AMR - Adaptive Mesh Refinement cfg
+----------------------------------
 
 All parameters under ``[AMR]``
 
