@@ -47,6 +47,8 @@ VisIt configuration
 
 ssh issues are probably caused by ssh keys not being set correctly. In the ``Host profiles`` settings, specify the path to your ssh key in the form ``ssh -i /path/to/key``. Especially passphrased keys may require the use of ``-nopty`` as a launch option to be able to enter the passphrase.
 
+On Windows: NB VisIt uses a hacky solution for ssh tunneling. New ssh servers may complain with Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password), and a more proper way to do it is by the ssh -J command, like so: image i.e. Copy the chosen gateway address to manual ssh command as the jump point -J and uncheck Use gateway. For Windows, this also requires getting the optional OpenSSH feature (Win 10+) from Windows settings and setting VISITSSH to point at OpenSSH.
+
 From VisIt options/databases, when handling vlsv files, one should enable the box "Treat all databases as time-varying". Otherwise the plots will likely appear garbled at some point.
 
 The hands-on
