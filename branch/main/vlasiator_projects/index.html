@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vlasiator Project Structure &mdash; Space Plasma Simulations with Vlasiator on LUMI Supercomputer  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_lesson.css?v=0c089442" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_rtd_theme_ext_color_contrast.css?v=8e8ea19f" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../_static/overrides.css?v=0572569b" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=187304be"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="../_static/minipres.js?v=a0d29692"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="Quick Reference" href="../quick-reference/" />
+    <link rel="prev" title="Analysator exercises" href="../analysator_exercises/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../" class="icon icon-home">
+            Space Plasma Simulations with Vlasiator on LUMI Supercomputer
+              <img src="../_static/ENCCS.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Prerequisites</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/">Introduction to Vlasiator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/#rules-of-the-road">Rules of the Road</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prepare_workspace/">Preparations for the workshop</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The lessons</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installing-vlasiator/">Installing Vlasiator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmarks_and_running/">How to configure Vlasiator for performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmarks_and_running/#exercises">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vlasiator_outputs/">Vlasiator output data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visit/">VisIt and VLSV bootcamp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysator/">Introduction to Analysator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysator_exercises/">Analysator exercises</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Vlasiator Project Structure</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#why-we-teach-this-lesson">Why we teach this lesson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#intended-learning-outcomes">Intended learning outcomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#project">Project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#so-what-are-projects">So what are Projects?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a-non-exhaustive-list-of-projects">A (non-exhaustive) list of projects</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#alfven">Alfvén</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#diffusion">Diffusion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dispersion">Dispersion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#distributions">Distributions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#firehose">Firehose</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#flowthrough">Flowthrough</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fluctuations">Fluctuations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#harris">Harris</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ipshock">IPShock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#khb">KHB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#magnetosphere">Magnetosphere</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#multipeak">MultiPeak</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#riemann1">Riemann1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#shock-shocktest">Shock, Shocktest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#template">Template</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#test-fp">test_fp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#test-trans">test_trans</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#boundary-conditions">Boundary conditions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#copysphere">Copysphere</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#donotcompute">DoNotCompute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inflow-and-maxwellian">Inflow and Maxwellian</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ionosphere">Ionosphere</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#outflow">Outflow</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quick-reference/">Quick Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vlasiator-cfg-reference/">Vlasiator config reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysator_supported/">Analysator supported data reducers and vlasiator variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../new_project/">New project from template</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">Space Plasma Simulations with Vlasiator on LUMI Supercomputer</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Vlasiator Project Structure</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ENCCS/content/blob/main/content/vlasiator_projects.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="vlasiator-project-structure">
+<h1>Vlasiator Project Structure<a class="headerlink" href="#vlasiator-project-structure" title="Link to this heading"></a></h1>
+<section id="why-we-teach-this-lesson">
+<h2>Why we teach this lesson<a class="headerlink" href="#why-we-teach-this-lesson" title="Link to this heading"></a></h2>
+<p>Here we go through some available Vlasiator projects and how those are employed to set up different environments.
+main-loop</p>
+</section>
+<section id="intended-learning-outcomes">
+<h2>Intended learning outcomes<a class="headerlink" href="#intended-learning-outcomes" title="Link to this heading"></a></h2>
+<p>The user has an overview of main types of projects included in Vlasiator and can configure them.</p>
+</section>
+<section id="project">
+<h2>Project<a class="headerlink" href="#project" title="Link to this heading"></a></h2>
+<p>Let’s look at some sections of a Vlasiator configuration file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ParticlePopulations</span> <span class="o">=</span> <span class="n">proton</span>
+
+<span class="n">project</span> <span class="o">=</span> <span class="n">Flowthrough</span>
+<span class="n">propagate_field</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">propagate_vlasov_acceleration</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">propagate_vlasov_translation</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">dynamic_timestep</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="p">[</span><span class="n">proton_properties</span><span class="p">]</span>
+<span class="o">...</span>
+<span class="p">[</span><span class="n">AMR</span><span class="p">]</span>
+<span class="o">...</span>
+<span class="p">[</span><span class="n">gridbuilder</span><span class="p">]</span>
+<span class="o">...</span>
+<span class="o">...</span>
+
+<span class="p">[</span><span class="n">Flowthrough</span><span class="p">]</span>
+<span class="n">Bx</span> <span class="o">=</span> <span class="mf">1.0e-9</span>
+<span class="n">By</span> <span class="o">=</span> <span class="mf">1.0e-9</span>
+<span class="n">Bz</span> <span class="o">=</span> <span class="mf">1.0e-9</span>
+
+<span class="p">[</span><span class="n">proton_Flowthrough</span><span class="p">]</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mf">1.0e5</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="mf">1.0e6</span>
+<span class="n">VX0</span> <span class="o">=</span> <span class="mf">1e5</span>
+<span class="n">VY0</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">VZ0</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>Here, we have specified <code class="docutils literal notranslate"><span class="pre">project</span> <span class="pre">=</span> <span class="pre">Flowthrough</span></code>, and some input under <code class="docutils literal notranslate"><span class="pre">[Flowthrough]</span></code> and <code class="docutils literal notranslate"><span class="pre">proton_Flowthrough</span></code>. These are, as the name suggests, the project inputs for the configuration. Let’s see what these are made of and fetch the <code class="docutils literal notranslate"><span class="pre">./vlasiator</span> <span class="pre">--help</span></code> outputs.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Flowthrough</span><span class="p">]</span>
+<span class="n">Bx</span> <span class="o">=</span> <span class="mf">1.0e-9</span>
+<span class="n">By</span> <span class="o">=</span> <span class="mf">1.0e-9</span>
+<span class="n">Bz</span> <span class="o">=</span> <span class="mf">1.0e-9</span>
+
+<span class="o">--</span><span class="n">Flowthrough</span><span class="o">.</span><span class="n">Bx</span> <span class="n">arg</span> <span class="p">(</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="o">...</span> <span class="n">Magnetic</span> <span class="n">field</span> <span class="n">x</span> <span class="n">component</span> <span class="p">(</span><span class="n">T</span><span class="p">)</span>
+<span class="o">--</span><span class="n">Flowthrough</span><span class="o">.</span><span class="n">By</span> <span class="n">arg</span> <span class="p">(</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="o">...</span> <span class="n">Magnetic</span> <span class="n">field</span> <span class="n">y</span> <span class="n">component</span> <span class="p">(</span><span class="n">T</span><span class="p">)</span>
+<span class="o">--</span><span class="n">Flowthrough</span><span class="o">.</span><span class="n">Bz</span> <span class="n">arg</span> <span class="p">(</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="o">...</span> <span class="n">Magnetic</span> <span class="n">field</span> <span class="n">z</span> <span class="n">component</span> <span class="p">(</span><span class="n">T</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>That’s pretty self-explanatory! Notably, the <code class="docutils literal notranslate"><span class="pre">arg</span> <span class="pre">(=0)</span></code> shows the syntax and default value, and the unit <code class="docutils literal notranslate"><span class="pre">(T)</span></code> is given at the end. Similarly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">proton_Flowthrough</span><span class="p">]</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mf">1.0e5</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="mf">1.0e6</span>
+<span class="n">VX0</span> <span class="o">=</span> <span class="mf">1e5</span>
+<span class="n">VY0</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">VZ0</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="o">--&lt;</span><span class="n">population</span><span class="o">&gt;</span><span class="n">_Flowthrough</span><span class="o">.</span><span class="n">rho</span> <span class="n">arg</span> <span class="p">(</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>      <span class="n">Number</span> <span class="n">density</span> <span class="p">(</span><span class="n">m</span><span class="o">^-</span><span class="mi">3</span><span class="p">)</span>
+<span class="o">--&lt;</span><span class="n">population</span><span class="o">&gt;</span><span class="n">_Flowthrough</span><span class="o">.</span><span class="n">T</span> <span class="n">arg</span> <span class="p">(</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>        <span class="n">Temperature</span> <span class="p">(</span><span class="n">K</span><span class="p">)</span>
+<span class="o">--&lt;</span><span class="n">population</span><span class="o">&gt;</span><span class="n">_Flowthrough</span><span class="o">.</span><span class="n">VX0</span> <span class="n">arg</span> <span class="p">(</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>      <span class="n">Initial</span> <span class="n">bulk</span> <span class="n">velocity</span> <span class="ow">in</span> <span class="n">x</span><span class="o">-</span><span class="n">direction</span>
+<span class="o">--&lt;</span><span class="n">population</span><span class="o">&gt;</span><span class="n">_Flowthrough</span><span class="o">.</span><span class="n">VY0</span> <span class="n">arg</span> <span class="p">(</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>      <span class="n">Initial</span> <span class="n">bulk</span> <span class="n">velocity</span> <span class="ow">in</span> <span class="n">y</span><span class="o">-</span><span class="n">direction</span>
+<span class="o">--&lt;</span><span class="n">population</span><span class="o">&gt;</span><span class="n">_Flowthrough</span><span class="o">.</span><span class="n">VZ0</span> <span class="n">arg</span> <span class="p">(</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>      <span class="n">Initial</span> <span class="n">bulk</span> <span class="n">velocity</span> <span class="ow">in</span> <span class="n">z</span><span class="o">-</span><span class="n">direction</span>
+</pre></div>
+</div>
+<p>These describe the initial population parameters, for each ion population. Inflow boundaries are described elsewhere (see <code class="docutils literal notranslate"><span class="pre">[proton_Maxwellian]</span></code>!). There are few unused options provided by the project:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">Flowthrough</span><span class="o">.</span><span class="n">densityModel</span> <span class="n">arg</span> <span class="p">(</span><span class="o">=</span><span class="n">Maxwellian</span><span class="p">)</span>  <span class="n">Plasma</span> <span class="n">density</span> <span class="n">model</span><span class="p">,</span> <span class="s1">&#39;Maxwellian&#39;</span> <span class="ow">or</span> <span class="s1">&#39;SheetMaxwellian&#39;</span>
+<span class="o">--</span><span class="n">Flowthrough</span><span class="o">.</span><span class="n">densityWidth</span> <span class="n">arg</span> <span class="p">(</span><span class="o">=</span><span class="mi">60000000</span><span class="p">)</span>    <span class="n">Width</span> <span class="n">of</span> <span class="n">signal</span> <span class="n">around</span> <span class="n">origin</span>
+<span class="o">--&lt;</span><span class="n">population</span><span class="o">&gt;</span><span class="n">_Flowthrough</span><span class="o">.</span><span class="n">rhoBase</span> <span class="n">arg</span> <span class="p">(</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>   <span class="n">Background</span> <span class="n">number</span> <span class="n">density</span> <span class="p">(</span><span class="n">m</span><span class="o">^-</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>These are a bit more interesting! <code class="docutils literal notranslate"><span class="pre">densityModel</span></code> defines the (spatial) density profile (and there are unlisted options, such as <code class="docutils literal notranslate"><span class="pre">Square</span></code>) and <cite>densityWidth</cite> gives a scale width for the signal. <code class="docutils literal notranslate"><span class="pre">Maxwellian</span></code> is a bit confusingly a spatially-constant density, and then <code class="docutils literal notranslate"><span class="pre">rhoBase</span></code> sets a background density besides the density signal.</p>
+<p>Notably, these all are related to the initial conditions: we populate the initial plasma and the magnetic field values (or call other functions in e.g. <cite>backgroundfield/</cite>). System boundaries are defined by their own classes and configuration headers (like <code class="docutils literal notranslate"><span class="pre">[proton_Maxwellian]</span></code> for inflow boundaries).</p>
+<section id="so-what-are-projects">
+<h3>So what are Projects?<a class="headerlink" href="#so-what-are-projects" title="Link to this heading"></a></h3>
+<p>Vlasiator <em>projects</em>  are a modular component for setting up Vlasiator simulations. These enable separating e.g. the initialization logic of simulation from the actual solvers, with their own input parameter sets. These can be found in the Vlasiator source code, under the folder <a class="reference external" href="https://github.com/fmihpc/vlasiator/tree/master/projects">projects</a>. Besides initialization, some hooks are provided in the main solver for a project to perform specialized tasks during the simulation.</p>
+<p>For example, the Flowthrough project source folder looks like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/vlasiator/projects/Flowthrough$<span class="w"> </span>ls
+Flowthrough_amr_test_20190611_YPK.cfg
+Flowthrough.cfg
+Flowthrough.cpp
+Flowthrough.h
+run_amr_test_20190611_YPK.sh
+sw1_amr_test_20190611_YPK.dat
+sw1.dat
+</pre></div>
+</div>
+<p>There are the project code definitions (<code class="docutils literal notranslate"><span class="pre">Flowthrough.h</span></code> and <code class="docutils literal notranslate"><span class="pre">Flowthrough.cpp</span></code>) and and example configuration (<code class="docutils literal notranslate"><span class="pre">Flowthrough.cfg</span></code>, with an associated <code class="docutils literal notranslate"><span class="pre">sw1.dat</span></code>), and some historical tests preserved for posteriority. This is the basic layout of a project in the source files, and some folders even contain documentation and helper spreadsheets!</p>
+</section>
+<section id="a-non-exhaustive-list-of-projects">
+<h3>A (non-exhaustive) list of projects<a class="headerlink" href="#a-non-exhaustive-list-of-projects" title="Link to this heading"></a></h3>
+<section id="alfven">
+<h4>Alfvén<a class="headerlink" href="#alfven" title="Link to this heading"></a></h4>
+<p>A test case for circularly polarized Alfvén waves, based on MHD test cases. See the included documentation. Superseded by dispersion tests.</p>
+</section>
+<section id="diffusion">
+<h4>Diffusion<a class="headerlink" href="#diffusion" title="Link to this heading"></a></h4>
+<p>Two-dimensional plasma diffusion test.</p>
+</section>
+<section id="dispersion">
+<h4>Dispersion<a class="headerlink" href="#dispersion" title="Link to this heading"></a></h4>
+<p>Dispersion test driven by a specific form of perturbations. Superseded by Fluctuations.</p>
+<p>See the code for an example of utilizing a simulation loop hook for custom run-time code.</p>
+</section>
+<section id="distributions">
+<h4>Distributions<a class="headerlink" href="#distributions" title="Link to this heading"></a></h4>
+<p>Two Maxwellian populations of the same species with different velocity distribution parameters, with density and magnetic field perturbations.</p>
+</section>
+<section id="firehose">
+<h4>Firehose<a class="headerlink" href="#firehose" title="Link to this heading"></a></h4>
+<p>Firehose test with parametrized perturbations, incl. a parameter calculation sheet.</p>
+</section>
+<section id="flowthrough">
+<h4>Flowthrough<a class="headerlink" href="#flowthrough" title="Link to this heading"></a></h4>
+<p>Plasma flowing in a tube, with either inflow driving or given density signals. Used e.g. in testing of the Ganse et al., 2023 AMR paper.</p>
+</section>
+<section id="fluctuations">
+<h4>Fluctuations<a class="headerlink" href="#fluctuations" title="Link to this heading"></a></h4>
+<p>General-purpose test, with random perturbations in density, velocity, or magnetic field and periodic boundaries. Useful for inspecting dispersion properties.</p>
+</section>
+<section id="harris">
+<h4>Harris<a class="headerlink" href="#harris" title="Link to this heading"></a></h4>
+<p>1-D MHD Harris equilibrium profile. Has not stayed in equilibrium.</p>
+</section>
+<section id="ipshock">
+<h4>IPShock<a class="headerlink" href="#ipshock" title="Link to this heading"></a></h4>
+<p>A shock study project.</p>
+</section>
+<section id="khb">
+<h4>KHB<a class="headerlink" href="#khb" title="Link to this heading"></a></h4>
+<p>Kelvin-Helmholz instability template. Not necessarily in equilibrium in the initial condition (studies ongoing).</p>
+</section>
+<section id="magnetosphere">
+<h4>Magnetosphere<a class="headerlink" href="#magnetosphere" title="Link to this heading"></a></h4>
+<p>The global magnetosphere project. Includes inputs for the global dipole (several methods and parameters) and the initial populations (that help to stabilize the simulation during initialization).</p>
+<p>The example configuration is 2D, with the new ionosphere inner boundary, which is not supported in 2D. It also includes a helium population.</p>
+</section>
+<section id="multipeak">
+<h4>MultiPeak<a class="headerlink" href="#multipeak" title="Link to this heading"></a></h4>
+<p>A test with configurable number of Maxwellian populations with some spatial density distribution and perturbations.</p>
+</section>
+<section id="riemann1">
+<h4>Riemann1<a class="headerlink" href="#riemann1" title="Link to this heading"></a></h4>
+<p>Riemann problem/shock tube test case, based on MHD tests.</p>
+</section>
+<section id="shock-shocktest">
+<h4>Shock, Shocktest<a class="headerlink" href="#shock-shocktest" title="Link to this heading"></a></h4>
+<p>Various.</p>
+</section>
+<section id="template">
+<h4>Template<a class="headerlink" href="#template" title="Link to this heading"></a></h4>
+<p>Template for building your own project.</p>
+</section>
+<section id="test-fp">
+<h4>test_fp<a class="headerlink" href="#test-fp" title="Link to this heading"></a></h4>
+<p>Field solver isotropy test.</p>
+</section>
+<section id="test-trans">
+<h4>test_trans<a class="headerlink" href="#test-trans" title="Link to this heading"></a></h4>
+<p>Vlasov translation isotropy test.</p>
+<p>These projects and their example configs can be used as templates for building larger studies. If you don’t find a suitable project to work from, feel free to build your own! This requires a bit of coding, and the basics of that are explained in <a class="reference external" href="new_project">this write-up</a>.</p>
+</section>
+</section>
+</section>
+<section id="boundary-conditions">
+<h2>Boundary conditions<a class="headerlink" href="#boundary-conditions" title="Link to this heading"></a></h2>
+<p>The other fairly important portion besides the initial conditions offered by the projects, these can be found under the <a class="reference external" href="https://github.com/fmihpc/vlasiator/tree/master/sysboundary">sysboundary</a> folder in the source code. See project and sample configuration files for examples.</p>
+<p>The boundary conditions handle both the Vlasov boundary conditions and the fieldsolver boundary conditions at the same time.</p>
+<section id="copysphere">
+<h3>Copysphere<a class="headerlink" href="#copysphere" title="Link to this heading"></a></h3>
+<p>Formerly known as <code class="docutils literal notranslate"><span class="pre">ConductingSphere</span></code>. Copies perturbed-B from nearest neighbours (or zeros it), zeros electric fields and holds initial plasma distributions constant.</p>
+<p>Supplanted by Ionosphere for 3D magnetospheric simulations.</p>
+</section>
+<section id="donotcompute">
+<h3>DoNotCompute<a class="headerlink" href="#donotcompute" title="Link to this heading"></a></h3>
+<p>Handles e.g. cells inside the inner boundary, and tells for the solvers to bypass these.</p>
+</section>
+<section id="inflow-and-maxwellian">
+<h3>Inflow and Maxwellian<a class="headerlink" href="#inflow-and-maxwellian" title="Link to this heading"></a></h3>
+<p>Inflow is a base class that forms the basis for Maxwellian. Handles solar wind inflow, includin</p>
+</section>
+<section id="ionosphere">
+<h3>Ionosphere<a class="headerlink" href="#ionosphere" title="Link to this heading"></a></h3>
+<p>Contains the ionosphere solver and wraps everything related to it, including the coupling from the ionosphere to the Vlasov inner boundary.</p>
+<p>Potential mistakes include having the coupling radius too close/just at the inner boundary, leading to artefacts on the ionosphere (see /scratch/project_465000693/example_runs/Ionosphere3D and esp. the early phase outputs).</p>
+</section>
+<section id="outflow">
+<h3>Outflow<a class="headerlink" href="#outflow" title="Link to this heading"></a></h3>
+<p>Copy conditions and plasma outflow.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../analysator_exercises/" class="btn btn-neutral float-left" title="Analysator exercises" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../quick-reference/" class="btn btn-neutral float-right" title="Quick Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, The contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
